@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Changed language to English -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgios Gkoltsios' Portfolio</title> <!-- Changed title to English -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Slate 50 */
+            color: #1a202c; /* Gray 900 */
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-padding {
+            padding: 4rem 1rem; /* Equivalent to py-16 px-4 */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem; /* Equivalent to md:py-24 md:px-8 */
+            }
+        }
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 8rem 4rem; /* Equivalent to lg:py-32 lg:px-16 */
+            }
+        }
+        /* Styles for skill bars */
+        .skill-bar-container {
+            background-color: #e2e8f0; /* Gray 200 */
+            border-radius: 9999px; /* Fully rounded corners */
+            height: 10px;
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            background-color: #4c51bf; /* Indigo 600 */
+            height: 100%;
+            border-radius: 9999px;
+            transition: width 0.8s ease-out; /* Smooth width transition */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white shadow-lg fixed w-full z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#hero-section" class="text-2xl font-bold rounded-md hover:text-blue-200 transition duration-300">My Portfolio</a> <!-- Changed text to English and href to #hero-section -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-lg font-medium hover:text-blue-200 transition duration-300 rounded-md py-1 px-2">About Me</a> <!-- Changed text to English -->
+                <a href="#education" class="text-lg font-medium hover:text-blue-200 transition duration-300 rounded-md py-1 px-2">Education</a> <!-- Changed text to English -->
+                <a href="#experience" class="text-lg font-medium hover:text-blue-200 transition duration-300 rounded-md py-1 px-2">Experience</a> <!-- Changed text to English -->
+                <a href="#projects" class="text-lg font-medium hover:text-blue-200 transition duration-300 rounded-md py-1 px-2">Projects</a> <!-- Changed text to English -->
+                <a href="#contact" class="text-lg font-medium hover:text-blue-200 transition duration-300 rounded-md py-1 px-2">Contact</a> <!-- Changed text to English -->
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-blue-800 bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-white text-3xl">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 focus:outline-none">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#about" class="hover:text-blue-200 transition duration-300" onclick="closeMobileMenu()">About Me</a> <!-- Changed text to English -->
+            <a href="#education" class="hover:text-blue-200 transition duration-300" onclick="closeMobileMenu()">Education</a> <!-- Changed text to English -->
+            <a href="#experience" class="hover:text-blue-200 transition duration-300" onclick="closeMobileMenu()">Experience</a> <!-- Changed text to English -->
+            <a href="#projects" class="hover:text-blue-200 transition duration-300" onclick="closeMobileMenu()">Projects</a> <!-- Changed text to English -->
+            <a href="#contact" class="hover:text-blue-200 transition duration-300" onclick="closeMobileMenu()">Contact</a> <!-- Changed text to English -->
+        </div>
+    </header>
+
+    <main class="pt-20"> <!-- Adjust padding-top to account for fixed header -->
+
+        <!-- Hero Section -->
+        <section id="hero-section" class="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-center section-padding flex items-center justify-center min-h-screen-minus-header">
+            <div class="max-w-4xl mx-auto px-4">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">Hello, I'm GEORGIOS GKOLTSIOS</h1> <!-- Changed text to English -->
+                <p class="text-xl md:text-2xl mb-8 opacity-90">A passionate final-year Informatics student dedicated to building impactful web experiences.</p> <!-- Changed text to English -->
+                <a href="#projects" class="inline-block bg-white text-blue-700 hover:bg-blue-100 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">View My Work</a> <!-- Changed text to English -->
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="bg-white section-padding">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">About Me</h2> <!-- Changed text to English -->
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <!-- Photo of Georgios Gkoltsios -->
+                        <img src="bio.jpg" alt="Photo of Georgios Gkoltsios" class="rounded-full shadow-xl mx-auto w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-blue-400">
+                    </div>
+                    <div class="md:w-2/3 text-lg leading-relaxed text-gray-700">
+                        <p class="mb-4 about-me-text">
+                            Final-year student in Applied Informatics at the University of Macedonia, with strong technical skills in programming languages (Java, C, JavaScript, HTML, PHP, MySQL) and a solid understanding of GDPR compliance.
+                        </p>
+                        <p class="mb-4 about-me-text">
+                            Started my professional experience with an internship that evolved into formal employment, demonstrating reliability and adaptability.
+                        </p>
+                        <p class="about-me-text">
+                            I am seeking an entry-level opportunity in a dynamic consulting environment such as Deloitte, where I can apply my analytical mindset, technical knowledge, and eagerness to learn to deliver impactful solutions to clients.
+                        </p>
+                        <button id="enhance-about-me-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full mt-6 focus:outline-none focus:shadow-outline transform hover:scale-105 transition duration-300 ease-in-out shadow-lg flex items-center justify-center">
+                            ✨ Enhance "About Me"
+                        </button>
+                        <div id="enhanced-about-me-output" class="mt-6 p-4 bg-blue-50 rounded-lg shadow-inner hidden">
+                            <p class="loading-indicator text-center text-blue-700 hidden">Generating...</p>
+                            <p class="generated-text text-gray-800"></p>
+                        </div>
+
+                        <!-- CV Section -->
+                        <div class="mt-12 text-center">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Curriculum Vitae</h3> <!-- Changed text to English -->
+                            <!-- Replace '#' with the actual URL of your CV (e.g., a PDF file) -->
+                            <a href="#" download="GEORGIOS_GKOLTSIOS_CV.pdf" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                                Download My CV
+                            </a> <!-- Changed text to English -->
+                        </div>
+
+                        <!-- Skills Section -->
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">My Skills</h3> <!-- Changed text to English -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="col-span-full">
+                                    <h4 class="text-xl font-semibold text-gray-700 mb-4">Programming Languages & Web Technologies</h4> <!-- Changed text to English -->
+                                </div>
+                                <!-- Skill: Java -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">Java</span>
+                                        <span class="text-sm font-medium text-gray-600">90%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: C -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">C</span>
+                                        <span class="text-sm font-medium text-gray-600">85%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: JavaScript -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">JavaScript</span>
+                                        <span class="text-sm font-medium text-gray-600">80%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: Python -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">Python</span>
+                                        <span class="text-sm font-medium text-gray-600">70%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: PHP -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">PHP</span>
+                                        <span class="text-sm font-medium text-gray-600">75%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: HTML -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">HTML</span>
+                                        <span class="text-sm font-medium text-gray-600">95%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 95%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: CSS -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">CSS</span>
+                                        <span class="text-sm font-medium text-gray-600">90%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: MySQL -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">MySQL</span>
+                                        <span class="text-sm font-medium text-gray-600">88%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 88%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: MS Office Suite -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">MS Office Suite</span>
+                                        <span class="text-sm font-medium text-gray-600">90%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: Digital Content Creation -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">Digital Content Creation</span>
+                                        <span class="text-sm font-medium text-gray-600">85%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: GDPR Compliance -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">GDPR Compliance</span>
+                                        <span class="text-sm font-medium text-gray-600">92%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 92%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-span-full mt-8">
+                                    <h4 class="text-xl font-semibold text-gray-700 mb-4">Languages</h4> <!-- Changed text to English -->
+                                </div>
+                                <!-- Skill: Greek -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">Greek (Native)</span>
+                                        <span class="text-sm font-medium text-gray-600">100%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: English -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">English (Proficient)</span>
+                                        <span class="text-sm font-medium text-gray-600">90%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <!-- Skill: Spanish -->
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-lg font-medium text-gray-700">Spanish (Beginner)</span>
+                                        <span class="text-sm font-medium text-gray-600">50%</span>
+                                    </div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar-fill" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="bg-gray-50 section-padding">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Education</h2> <!-- Changed text to English -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-800">University of Macedonia – Thessaloniki, Greece</h3>
+                        <p class="text-xl text-gray-700">BSc in Applied Informatics</p>
+                        <p class="text-gray-600">Sep 2019 – Expected Graduation: 2024/2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience" class="bg-white section-padding">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Professional Experience</h2> <!-- Changed text to English -->
+                <div class="space-y-10">
+                    <!-- Position 1: Thessaloniki Tourism Organization -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800">Thessaloniki Tourism Organization</h3>
+                        <p class="text-xl text-gray-700">Administrative Assistant (initially through Internship)</p>
+                        <p class="text-gray-600 mb-4">Feb 2023 – Oct 2024</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Started as an intern; later transitioned to full contract employment</li>
+                            <li>Handled and organized documentation and official records</li>
+                            <li>Responded to material/support requests from internal and external stakeholders</li>
+                            <li>Welcomed cruise ship visitors at the Port of Thessaloniki as part of tourism reception activities</li>
+                            <li>Managed the warehouse and promotional inventory stock</li>
+                            <li>Maintained and updated the official website (portal) of the Organization</li>
+                            <li>Supported daily operations and communication with partner entities</li>
+                        </ul>
+                    </div>
+                    <!-- Position 2: Pre-Election Campaign – Voula Patoulidou -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-800">Pre-Election Campaign – Voula Patoulidou (Olympian & Re-elected Candidate)</h3>
+                        <p class="text-xl text-gray-700">Digital Content & Campaign Support</p>
+                        <p class="text-gray-600 mb-4">Municipal/Regional Elections 2023 & European Elections 2024</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Participated in the planning and implementation of the campaign's communication strategy</li>
+                            <li>Managed supporter communications and public relations</li>
+                            <li>Managed and updated the candidate's official website, ensuring timely and accurate information dissemination.</li>
+                            <li>Participated in the creation and editing of promotional videos for social media platforms (Instagram, TikTok), enhancing digital engagement.</li>
+                            <li>Organized and coordinated campaign events and activities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="bg-gray-100 section-padding">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">My Projects</h2> <!-- Changed text to English -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1: Library Management System -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x400/E0F2F7/000000?text=Library+Management+System" alt="Thumbnail of Library Management System Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Library Management System</h3> <!-- Changed text to English -->
+                            <p class="project-description text-gray-600 mb-4">Developed a desktop application using Java Swing and JDBC that allows users to log in, borrow and return books, and manage book inventory. The backend is powered by a MySQL database.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-red-100 text-red-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Java</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Java Swing</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full">JDBC</span>
+                            </div>
+                            <a href="https://github.com/yourusername/library-management-system" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                View Project
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                            <button class="generate-description-btn bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full mt-4 focus:outline-none focus:shadow-outline transform hover:scale-105 transition duration-300 ease-in-out shadow-lg flex items-center justify-center w-full">
+                                ✨ Expand Description
+                            </button>
+                            <div class="expanded-description mt-4 text-gray-700 text-sm italic hidden">
+                                <p class="loading-indicator text-center hidden">Generating...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Personal Website Portfolio -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x400/F0F9FF/000000?text=Personal+Website+Portfolio" alt="Thumbnail of Personal Website Portfolio Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Personal Website Portfolio</h3> <!-- Changed text to English -->
+                            <p class="project-description text-gray-600 mb-4">Created a responsive personal website to showcase academic and professional background, including sections for About Me, Projects, and Contact. Built with HTML5, styled with CSS3, and interactive elements using vanilla JavaScript.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded-full">HTML5</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full">CSS3</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/yourusername/personal-website-portfolio" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                View Project
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                            <button class="generate-description-btn bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full mt-4 focus:outline-none focus:shadow-outline transform hover:scale-105 transition duration-300 ease-in-out shadow-lg flex items-center justify-center w-full">
+                                ✨ Expand Description
+                            </button>
+                            <div class="expanded-description mt-4 text-gray-700 text-sm italic hidden">
+                                <p class="loading-indicator text-center hidden">Generating...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Simple Hotel Booking Web App -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x400/E3F2FD/000000?text=Hotel+Booking+App" alt="Thumbnail of Hotel Booking App Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Simple Hotel Booking Web App</h3> <!-- Changed text to English -->
+                            <p class="project-description text-gray-600 mb-4">Designed a web application for hotel room booking. Features include user authentication, room availability display, booking functionality, and an admin panel to manage reservations. Backend is built with PHP and data stored in MySQL.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-pink-100 text-pink-800 text-sm font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                            </div>
+                            <a href="https://github.com/yourusername/simple-hotel-booking-web-app" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                View Project
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                            <button class="generate-description-btn bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full mt-4 focus:outline-none focus:shadow-outline transform hover:scale-105 transition duration-300 ease-in-out shadow-lg flex items-center justify-center w-full">
+                                ✨ Expand Description
+                            </button>
+                            <div class="expanded-description mt-4 text-gray-700 text-sm italic hidden">
+                                <p class="loading-indicator text-center hidden">Generating...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white section-padding">
+            <div class="container mx-auto px-4 max-w-2xl text-center">
+                <h2 class="text-4xl font-bold mb-12 text-gray-800">Contact</h2> <!-- Changed text to English -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-xl">
+                    <p class="text-lg text-gray-700 mb-6">
+                        I am always open to new opportunities and collaborations. Feel free to reach out to me!
+                    </p> <!-- Changed text to English -->
+                    <a href="mailto:ics20183@uom.edu.gr" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:shadow-outline transform hover:scale-105 transition duration-300 ease-in-out shadow-lg">
+                        Send me an Email
+                    </a> <!-- Changed text to English -->
+                    <p class="text-gray-600 mt-4">Email: ics20183@uom.edu.gr</p>
+                    <p class="text-gray-600 mt-2">Phone: +30 6983604405</p>
+                    <a href="https://www.linkedin.com/in/georgios-gkoltsios-b069921b7/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium mt-2 inline-block">
+                        LinkedIn Profile
+                    </a> <!-- Changed text to English -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Georgios Gkoltsios. All rights reserved.</p> <!-- Changed text to English -->
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/georgios-gkoltsios-b069921b7/" target="_blank" class="text-gray-400 hover:text-white transition duration-300 rounded-md py-1 px-2">LinkedIn</a>
+                <!-- Add more social links as needed -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition-opacity duration-300 opacity-0 invisible">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Only attempt to querySelector if the href is not just '#'
+                if (href === '#') {
+                    e.preventDefault(); // Prevent default jump to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Function to close mobile menu when a link is clicked
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Gemini API Integration: Project Description Generator
+        const generateDescriptionButtons = document.querySelectorAll('.generate-description-btn');
+
+        generateDescriptionButtons.forEach(button => {
+            button.addEventListener('click', async () => {
+                const projectCard = button.closest('.bg-white');
+                const projectDescriptionElement = projectCard.querySelector('.project-description');
+                const expandedDescriptionDiv = projectCard.querySelector('.expanded-description');
+                const loadingIndicator = expandedDescriptionDiv.querySelector('.loading-indicator');
+
+                const currentDescription = projectDescriptionElement.textContent;
+
+                // Show loading indicator
+                expandedDescriptionDiv.classList.remove('hidden');
+                loadingIndicator.classList.remove('hidden');
+                expandedDescriptionDiv.textContent = ''; // Clear previous content
+                expandedDescriptionDiv.appendChild(loadingIndicator); // Re-add loading indicator
+
+                const prompt = `Elaborate on the following project description, providing more technical details and potential impact. Keep it concise, around 3-4 sentences. Original description: "${currentDescription}"`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const generatedText = result.candidates[0].content.parts[0].text;
+                        expandedDescriptionDiv.textContent = generatedText;
+                    } else {
+                        expandedDescriptionDiv.textContent = 'Failed to generate description. Please try again.';
+                        console.error('Gemini API response structure unexpected:', result);
+                    }
+                } catch (error) {
+                    expandedDescriptionDiv.textContent = 'Error connecting to the generation service. Please check your network.';
+                    console.error('Error calling Gemini API:', error);
+                } finally {
+                    loadingIndicator.classList.add('hidden'); // Hide loading indicator
+                }
+            });
+        });
+
+        // Gemini API Integration: "About Me" Section Enhancer
+        const enhanceAboutMeButton = document.getElementById('enhance-about-me-btn');
+        const aboutMeParagraphs = document.querySelectorAll('.about-me-text');
+        const enhancedAboutMeOutput = document.getElementById('enhanced-about-me-output');
+        const enhancedLoadingIndicator = enhancedAboutMeOutput.querySelector('.loading-indicator');
+        const generatedAboutMeText = enhancedAboutMeOutput.querySelector('.generated-text');
+
+        enhanceAboutMeButton.addEventListener('click', async () => {
+            let fullAboutMeText = '';
+            aboutMeParagraphs.forEach(p => {
+                fullAboutMeText += p.textContent.trim() + ' ';
+            });
+            fullAboutMeText = fullAboutMeText.trim();
+
+            // Show loading indicator
+            enhancedAboutMeOutput.classList.remove('hidden');
+            enhancedLoadingIndicator.classList.remove('hidden');
+            generatedAboutMeText.textContent = ''; // Clear previous content
+
+            const prompt = `Enhance the following "About Me" text for a professional portfolio. Make it more concise, engaging, and professional. Keep it around 4-6 sentences. Original text: "${fullAboutMeText}"`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const generatedText = result.candidates[0].content.parts[0].text;
+                    generatedAboutMeText.textContent = generatedText;
+                } else {
+                    generatedAboutMeText.textContent = 'Failed to enhance description. Please try again.';
+                    console.error('Gemini API response structure unexpected:', result);
+                }
+            } catch (error) {
+                generatedAboutMeText.textContent = 'Error connecting to the generation service. Please check your network.';
+                console.error('Error calling Gemini API:', error);
+            } finally {
+                enhancedLoadingIndicator.classList.add('hidden'); // Hide loading indicator
+            }
+        });
+    </script>
+</body>
+</html>
